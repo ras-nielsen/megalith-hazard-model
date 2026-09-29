@@ -10,7 +10,10 @@ import numpy as np, pandas as pd
 BIN = 250  # yr
 
 def load_clean(path):
-    """Reconstruct the TSV, repairing embedded-newline corruption in `country`."""
+    """Load the ancestry-painting table (megalith_clean.csv). A raw TSV is also accepted:
+    it is reconstructed, repairing embedded-newline corruption in `country`."""
+    if path.endswith('.csv'):
+        return pd.read_csv(path)
     raw = open(path).read().split('\n')
     recs, buf = [], ''
     for line in raw:

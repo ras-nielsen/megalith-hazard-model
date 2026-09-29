@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np, pandas as pd
 from prep import load_clean
 
-TSV='megalith_mixtureModelling_emegergenceDates.tsv'
+DATA='megalith_clean.csv'
 BLUE='#2980b9'; GREY='#bdc3c7'; RED='#c0392b'
 
 # per-set most strongly associated source (from results_B.csv) and its ancestry label
@@ -26,7 +26,7 @@ SHORT={'Portugal/Spain':'Iberia','France_South':'France_S','France_North':'Franc
        'Bulgaria/NorthMacedonia/Romania/Albania/Serbia':'Balkans','Hungary':'Hungary',
        'Greece/Croatia':'Greece','Austria/Poland/CzechRepublic':'CentralEur'}
 
-df=load_clean(TSV)
+df=load_clean(DATA)
 
 # ---------------- Figure 1: association strength per set ----------------
 B=pd.read_csv('results_B.csv')
